@@ -1,0 +1,282 @@
+@charset "UTF-8";
+/*
+Theme Name: Skeleton WP Theme
+Theme URI: 
+Author: Michel TISSIER
+Author URI: 
+Description: The skeleton of a WordPress theme that can be configured at will OX
+Version: 0.0.1
+License: 
+License URI: 
+Text Domain: skeleton-WP-theme
+Tags: very usefull
+*/
+
+
+
+/* stylesheet  
+ * @author: Christelle BARRET - Élodie CHAPUIS;
+ * @date: 13/03/2019;
+ * @package: Refonte graphique et intégration site AEG 06;
+ * @title: AEG 06 - Un Pro au service de votre habitation.;
+ */
+
+/* https://meyerweb.com/eric/tools/css/reset/ 
+@import 'css/reset.css';*/
+
+    
+/* -------------------------------------- FONTS ET TYPO -------------------------------------- */
+
+@font-face {
+    font-family: "Raleway-Medium";
+    src: url(fonts/Raleway/Raleway-Medium.ttf) format("truetype");}
+
+/*@font-face {
+    font-family: 'ralewayregular';
+    src: url('/fonts/raleway-regular-webfont.woff2') format('woff2'),
+         url('/fonts/raleway-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;*/
+
+}
+@font-face {
+    font-family: "Raleway-Regular";
+    src: url(fonts/Raleway/Raleway-Regular.ttf) format("truetype");
+}
+
+/*@font-face {
+    font-family: "StardosStencil-Bold";
+    src: url(fonts/Stardos_Stencil/StardosStencil-Bold.ttf) format("truetype");*/
+}
+@font-face {
+    font-family: "StardosStencil-Regular";
+    src: url(fonts/Stardos_Stencil/StardosStencil-Regular.ttf) format("truetype");
+}
+
+
+/* -------------------------------------- BASES -------------------------------------- */
+html, *{max-width: 100%}/*Gestion taille Bootstrap*/
+body {background-color: #020202; text-align: center;}
+
+
+/* Fin fonts */
+/* PB FONTS BOOTSTRAP https://getbootstrap.com/docs/4.3/content/typography/#responsive-font-sizes + https://getbootstrap.com/docs/4.3/content/reboot/#native-font-stack */
+/* txt-color*/
+.txt-light{color: #C9D5D5;}
+.txt-gold{color: #CDAD5F;}
+.txt-dark{color: #020202;}  
+
+/* bg-color */
+.bg-hotdark{background-color: #020202;}
+.bg-grey{background-color: #2A2A2A;}
+.bg-hotlight{background-color: #E9E6D5;}
+/* Fin bg-color */
+
+/* titre */
+h1{font-family: "StardosStencil-Regular";text-transform: uppercase; font-size: 3rem; color: #C9D5D5;box-sizing: border-box; padding: 4% 2%; line-height: 5.4rem; background-color: #2A2A2A;margin-top: -0.3%;}
+h2{font-family:"Raleway-Regular"; font-size: 2.8rem; text-align: left; text-transform: uppercase;box-sizing: border-box; margin-bottom: 3rem;}
+h3{font-family:"Raleway-Regular"; font-size: 2rem; text-align: left; box-sizing: border-box; align-self: center;display: inline-block;}
+h3:first-letter{text-transform: uppercase;}
+/
+/* Texte */
+p, span{font-family:"Raleway-Regular"; font-size: 1.8rem; text-align: justify; box-sizing: border-box; margin: 1.6rem 1rem; line-height: 2.2rem;}
+.filter span a{text-transform: uppercase;}
+
+
+
+
+/* -------------------------------------- LAYOUT -------------------------------------- */
+.wrapper{max-width: 1200px;margin: 0 auto;}
+
+/* ***** HEADER ***** */
+/*  HEADER DESK ***** */
+.top-header{ margin: 2rem 0; display: flex; flex-direction: row; justify-content: space-around; }
+/*  FIN HEADER DESK ***** */
+/* HEADER MOBILE ***** */
+.topheader-mobile{width: 75%; height: 100px; display: flex; flex-direction: row; justify-content: space-around;}
+.box-headmob{width: 100%; height: 100vw;}
+/* ***** FIN HEADER ***** */
+
+/* ***** MAIN ***** */
+.adn, section{box-sizing: border-box; padding: 3rem 0.6rem;}
+
+/* ------ PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+.center-p{display: flex; flex-direction: row; flex-wrap: nowrap;}
+.wrapper-p,.art-left, .art-right{max-width: 50%;text-align: center;}
+.art-left, .art-right, .art-bottom, .subtitle-p{display: flex; flex-direction: row; flex-wrap: nowrap; flex-grow: 1;}
+.subtitle-p{flex-wrap: wrap; margin-bottom: 3rem;min-height: 10rem;}
+.art-left{flex-direction: row-reverse;}
+.art-bottom{justify-content: space-between;}
+/* ------ FIN PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+
+/* ------ PAGE GALERIE ---------------------------------------------------------------------------- */
+
+
+/* ------ FIN PAGE GALERIE ---------------------------------------------------------------------------- */
+
+
+/* ***** FIN MAIN ***** */
+.home-part{display: flex; flex-direction: column;flex-wrap: nowrap; margin: 3rem}
+/* ***** FOOTER ***** */
+footer{box-sizing: border-box; padding: 2rem 0; max-height: 200px;}
+footer .wrapper{display: flex; flex-direction: row; justify-content: space-around;}
+
+/* ***** FIN FOOTER ***** */
+
+/* -------------------------------------- MODULES -------------------------------------- */
+    /* calcul des pourcentages
+    * élément / parent x 100 = resultat en %*/
+
+    /* Calcul du ratio d'aspect
+	 * hauteur / largeur x 100 */
+/* ***** HEADER ***** */
+/*  HEADER DESK ***** */
+/* top-header */
+address{display: flex; flex-direction: column; justify-content: space-around; max-height: 100px; align-self: center;}
+address span{display: block; margin: 1rem;}
+/* fin top-header */
+/* nav */
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////// MODIFICATION start //////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+/* une class ajouté sur navbar-nav pour reprendre le contrôle */
+/* correspond à Menu primaire dans le back-office */
+.nav-prime li {margin:0 20px;}
+.nav-prime li a {font-size: 1.45rem; color:white;}
+.nav-prime li a:hover {text-decoration: none; color:silver;}
+/* j'ai créé un vrai menu dans le footer nommé nav-second */
+/* correspond à Menu secondaire dans le back-office */
+.nav-second {width:100%;}
+.nav-second li {margin:0 20px; padding:10px; display:inline-block;}
+.nav-second li a {width:150px; font-size: 1rem; color:#CDAD5F;}
+.nav-second li a:hover {text-decoration: none; color:silver;}
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////// MODIFICATION end //////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+.navbar-nav{margin: 0 auto; justify-content: space-around;max-width: 1200px;}
+.navbar-nav:nth-child(2){margin: 0 100px;}
+
+/* Fin nav */
+.img-header img{width: 100%;}
+/*  FIN HEADER DESK ***** */
+/*  HEADER MOBILE ***** */
+.item-topheader{height: 50px; width: 50px; align-self: center;}
+.item-topheader img{height: 100%;}
+.part-headmob{width: 100vw; height: auto; display: flex; flex-direction: row;}
+.item-headmob{width: 50vw; height: 50vw;padding: 10%;box-sizing: border-box; display: flex;}
+.item-headmob img{width: 100%; align-self: center;}
+/*  FIN HEADER MOBILE ***** */
+/* ***** FIN HEADER ***** */
+
+/* ***** MAIN ***** */
+/* ------ PAGE ACCUEIL ---------------------------------------------------------------------------- */
+/*  ACTIVITE ***** */
+.picto-title, .home-p{text-align: left;display: flex;flex-direction: row; justify-content: space-between;}
+.picto-title img{ margin: 1rem;}
+.picto-title h3{flex-grow: 1;box-sizing: border-box; padding: 4rem;}
+.home-p {flex-wrap: nowrap;}
+/*  FIN  ACTIVITE ***** */
+/* ------ FIN PAGE ACCUEIL ---------------------------------------------------------------------------- */
+
+/* ------ PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+.subtitle-p img{min-width: 20%; height: 31.0546875%; margin: auto 1%;}
+.subtitle-p h3{ display: inline; max-width: 60%; margin: 0 auto; text-align: center;}
+.wrapper-p p{text-align: center;}
+.art-bottom img{width: 32%; height: 48.7598944591029%}
+/* ------ FIN PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+
+/* ------ PAGE GALERIE ---------------------------------------------------------------------------- */
+.filter{text-align: left; font-size: 1.6rem; margin-bottom: 3rem}
+.filter span{margin-right: 2rem; }
+.book{width: 100%; height: 1600px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;}
+.vignette {box-sizing: border-box; width: 23%; height: 19%; background-color: grey; display: inline-block;}
+
+/* ------ FIN PAGE GALERIE ---------------------------------------------------------------------------- */
+
+/* ------ PAGE FORMULAIRE ---------------------------------------------------------------------------- */
+.h-form{max-width: 1200px; text-align: center;margin: 2rem auto; font-size: 2rem;}
+/* ------ FIN PAGE FORMULAIRE ---------------------------------------------------------------------------- */
+
+
+/* ***** FIN MAIN ***** */
+
+/* ***** FOOTER ***** */
+.social{width: 20%; height: 60px; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; margin: 0 15% 0 0;}
+.social img{padding: 0.5rem;}
+.footer-mentions{ width: 65%;display: flex; align-self: center;flex-wrap: wrap; justify-content: space-between;margin: 0 auto;}
+.footer-mentions a{width: 20%; align-self: center; display: block; text-align: center; margin: 0}
+/* ***** FIN FOOTER ***** */
+/* -------------------------------------- STATES -------------------------------------- */
+
+
+/* -------------------------------------- THEMES -------------------------------------- */
+
+.merde{font-family: "Raleway-Regular"; font-size: 5rem;}
+/* -------------------------------------- MEDIA QUERIES -------------------------------------- */
+/* MOBILE  ----------- */
+@media screen and (min-width: 200px) and (max-width: 375px){
+    .mobile-ghost{display: none;}
+    
+    .home-p {flex-wrap: wrap;}
+    .home-p img,.picto-title img{margin: 0 auto;}
+    .picto-title{flex-direction: column;}
+    .picto-title h3,.picto-title img{max-width: 40vw; padding: 2% auto; text-align: center;}
+    
+    .center-p{flex-direction: column; flex-wrap: nowrap;}
+    .wrapper-p,.art-left, .art-right{max-width: 100%;}
+    .subtitle-p{flex-direction: column-reverse; justify-content: center}
+    .subtitle-p h3{padding-bottom: 5rem;}
+    
+    .book{width: 100%; height: 1300px; flex-direction: column; flex-wrap: nowrap;}
+    .vignette {width: 90%; height: 25%; display: block;}
+    
+  
+    footer .wrapper{flex-direction: column;padding: auto;}
+    .social{width: 100%; justify-content: space-around; margin-bottom: 2rem;}
+    .footer-mentions span{width: 100%; padding: 0.6rem; }
+    
+}
+
+/* TABLET  ----------- */
+@media screen and (min-width: 376px) and (max-width: 989px){
+    .mobile-ghost{display: none;}
+    
+    .home-p {flex-wrap: wrap;}
+    .home-p img,.picto-title img{margin: 0 auto;}
+    .picto-title{flex-direction: column;}
+    .picto-title h3,.picto-title img{max-width: 40vw; padding: 2% auto; text-align: center;}
+    
+    .center-p{flex-direction: column; flex-wrap: nowrap;}
+    .wrapper-p,.art-left, .art-right{max-width: 100%;}
+    .subtitle-p{flex-direction: column-reverse;}
+    .subtitle-p h3{box-sizing: border-box; padding-bottom: 2%;}
+    .subtitle-p img{margin: auto;}
+    
+    .book{width: 100%; height: 1300px; flex-direction: column; flex-wrap: nowrap;}
+    .vignette {width: 90%; height: 19%;; display: block;}
+    
+    footer .wrapper, .footer-mentions{flex-direction: column;padding: auto;}
+    .social{width: 100%; justify-content: space-around; margin-bottom: 2rem;}
+    .footer-mentions span{width: 100%; padding: 0.6rem; }
+    
+}
+
+/* NETBOOK  ----------- */
+@media screen and (min-width: 990px) and (max-width: 1199px){
+    .desk-ghost{display: none;}
+    .wrapper-p{max-width: 80%}
+    .subtitle-p img{max-width: 100%; margin: auto 0;}
+}
+
+/* DESKTOP  ----------- */
+@media screen and (min-width: 1200px) and (max-width: 1600px){
+    .desk-ghost{display: none;}
+    .wrapper-p{max-width: 80%}
+    
+}
+    
+/* Long life and prosper */
+@media screen and (min-width: 1601px){
+    .desk-ghost{display: none;}
+    
+}

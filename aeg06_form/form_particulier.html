@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AEG06 form / partculier</title>
+	<style type="text/css">
+		body {margin:40px;}
+		fieldset {width:400px; margin:20px}
+		/*.weft {display:block;}*/
+		/*
+			fil de chaîne et fil de trame
+			warp yarn and weft yarn
+				trame / weft  = ---
+				chaîne / warp = |||
+		*/
+		label, input, select {padding:2px;}
+		.weft label {display:inline-block; width:38%; text-align: right; border-bottom:thin solid #FFF;}
+		.weft label::after {content: ' : ';} 
+		.half {}
+		.third label {width:74%;} /* third / tier */
+		input[type=text], select {width:58%;}
+		input[type=textarea] {display:block; width:100%;}
+		label[for=comment] {display:block;}
+		textarea {width:100%; display:block;}
+		.third input[type=text], .third select {width:22%;}
+		input[type=submit] {width:100%; background-color:#2FB946;}
+
+		.step1 label {background-color: #94DDEA;}
+		.step2 label {background-color: #EACC95;}
+		.step3 label {background-color: #A3EBC3;}
+	</style>
+</head>
+
+<body>
+	
+	<form action="aeg06form.php" method="post">
+		<fieldset class="step1" id="step1">
+			<legend>Vous êtes :</legend>
+			
+			<!-- particulier=0; pro=1 -->
+			<input type="hidden" name="pro" id="pro" value="0">
+
+			<div class="weft">
+				<label for="gender">Civilité</label>
+				<select name="gender" id="gender">
+					<option value="M">Monsieur</option>
+					<option value="F">Madame</option>
+				</select>
+			</div>
+			<div class="weft">
+				<label for="lastname">Nom</label>     
+				<input type="text" name="lastname" id="lastname" placeholder="Nom" required>
+			</div>
+			<div class="weft">
+				<label for="firstname">Prénom</label> 
+				<input type="text" name="firstname" id="firstname" placeholder="Prénom">
+			</div>	
+			<div class="weft">
+				<label for="address">Adresse</label>   
+				<input type="text" name="address" id="address" placeholder="11 bis baker street" required>
+			</div>	
+			<div class="weft">
+				<label for="postalcode">CP</label>           
+				<input type="text" name="postalcode" id="postalcode" placeholder="000000" required>
+			</div>	
+			<div class="weft">
+				<label for="city">Ville</label>       
+				<input type="text" name="city" id="city" placeholder="Ville" required>
+			</div>	
+			<div class="weft">
+				<label for="phone">Téléphone</label>  
+				<input type="text" name="phone" id="phone" placeholder="000000000" required>
+			</div>	
+			<div class="weft">
+				<label for="email">e-mail</label>     
+				<input type="text" name="email" id="email" placeholder="john.doe@gmail.com" required>
+			</div>
+			<div class="weft">	
+				<label for="rgpd">RGPD*</label>
+				<input type="checkbox" name="rgpd" id="rgpd" onchange="toggleDisable(this, 2);">
+			</div>
+			* Règlement général sur la protection des données
+		</fieldset>
+		
+		<fieldset class="step2" id="step2" disabled>
+			<legend>Type de locaux et de prestation</legend>
+			
+			<div class="weft">
+				<label for="typec">Vous êtes</label>
+				<select name="typec" id="typec">
+					<option value="">Propriétaire</option>
+					<option value="">locataire</option>
+				</select>
+			</div>
+			<div class="weft">
+				<label for="localtype">Type de locaux</label>
+				<select name="localtype" id="localtype">
+					<option value="1">maison</option>
+					<option value="2">appartement</option>
+				</select>
+			</div>
+			<div class="weft third">
+				<label for="totalsurface">Surface totale en m²</label>               
+				<input type="text" name="totalsurface" id="totalsurface">
+			</div>
+			<div class="weft third">
+				<label for="middleheigth">Hauteur moyenne sous plafond en m</label> 
+				<input type="text" name="middleheigth" id="middleheigth">
+			</div>
+			<div class="weft third">
+				<label for="energyclass">Classe énergétique du bâtiment</label>    
+				<select name="energyclass" id="energyclass">
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="E">E</option>
+					<option value="F">F</option>
+					<option value="G">G</option>
+				</select>
+			</div>
+			<div class="weft">
+				<label for="services">Type de prestation</label>
+				<select name="services" id="services">
+					<option value="1">pose et fourniture à neuf</option>
+					<option value="2">reprise d'une installation</option>
+					<option value="3">mise en service</option>
+					<option value="4">dépannage</option>
+					<option value="5">entretien</option>
+				</select>
+			</div>
+			<div class="weft third">
+				<label for="roomnumber">nombre de pièce(s) concernée(s)</label> 
+				<input type="text" name="roomnumber" id="roomnumber" size="4" required>
+			</div>
+			<div class="weft third">	
+				<label for="climnumber">Nombre de climatisation Concernée(s)</label> 
+				<input type="text" name="climnumber" id="climnumber" size="4">
+			</div>
+			<div class="weft">
+				<label for="roomtype">Type de pièce</label>
+				<select name="roomtype" id="roomtype">
+					<option value="1">salon / séjour</option>
+					<option value="2">chambre</option>
+					<option value="3">cuisine</option>
+					<option value="4">salle de bains</option>
+					<option value="5">veranda / terrasse</option>
+				</select>
+			</div>	
+			<div class="weft">
+				<label for="roomsurface">surface de la pièce</label> 
+				<input type="text" name="roomsurface" id="roomsurface" required>
+			</div>	
+			<div class="weft">
+				<label for="ceilingheight">hauteur sous plafond</label> 
+				<input type="text" name="ceilingheight" id="ceilingheight" requireds>
+			</div>
+			<div class="weft">	
+				<label for="contact">CGV **</label>
+				<input type="checkbox" name="contact" id="contact" onchange="toggleDisable(this, 3);">
+				Conditions générales de vente
+			</div>
+			** Acception d'utilisation des données et de prise de contact à des fins commerciales.
+		</fieldset>
+		
+		<fieldset class="step3" id="step3" disabled>
+			<legend>Gamme de produit</legend>
+			
+			<div class="weft">
+				<label for="typemachine">Split</label> 
+				<input type="radio" name="typemachine" id="split" value="1" checked>
+			</div>
+			<div class="weft">
+				<label for="typemachine">Gainable</label>
+				<input type="radio" name="typemachine" id="gainable" value="2">
+			</div>
+			<div class="weft">
+				<label for="typemachine">Console</label>
+				<input type="radio" name="typemachine" id="console" value="3">
+			</div>
+			<div class="weft">
+				<label for="typemachine">Cassette</label>
+				<input type="radio" name="typemachine" id="cassette" value="4">
+			</div>
+			<div class="weft">
+				<label for="gamme">Gamme</label>
+				<select name="gamme" id="gamme">
+					<option value="1">Entrée de gamme</option>
+					<option value="2">Milieu de gamme</option>
+					<option value="3">Haut de gamme</option>
+				</select>
+			</div>
+			<div class="weft">
+				<label for="brand">Marque</label>
+				<select name="brand" id="brand">
+					<option value="1">Daikin</option>
+					<option value="2">Panasonic</option>
+					<option value="3">Hitachi</option>
+					<option value="4">Atlantic/fujitsu</option>
+					<option value="5">Toshiba</option>
+					<option value="6">Général</option>
+					<option value="7">Mitsubishi</option>
+					<option value="8">CoolSmart</option>
+					<option value="9">Heiwa</option>
+				</select>
+			</div>
+			<label for="comment">Commentaire</label> 
+			<textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+			
+			<input type="submit" value="    Faire une demande d'estimation    " name="formsubmit" id="formsubmit">
+		</fieldset>
+		
+	</form>
+	
+<script type="text/javascript">
+	//window.onload = function() { }
+	function toggleDisable(checkbox, num) {
+		var toggle = document.getElementById("step" + num);
+		checkbox.checked ? toggle.disabled = false : toggle.disabled = true;
+	}
+</script>
+
+	
+</body>
+</html>

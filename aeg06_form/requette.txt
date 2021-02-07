@@ -1,0 +1,20 @@
+requette.txt
+
+Afficher un profil client
+Afficher un profil client particulier
+Afficher un profil client professionnel
+
+Afficher les menu 
+	vous êtes
+	type de locaux
+	type de prestation
+	type de pièce
+
+demande de devis
+
+Afficher les types de machine
+Afficher les gammes
+Afficher les marques
+
+
+
